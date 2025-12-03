@@ -1,0 +1,37 @@
+<div class="textfield" [ngClass]="['textfield--' + size, 'color-' + state]">
+  <label class="textfield__label">{{ label }}</label>
+
+  <div class="textfield__input-wrapper">
+    <!-- Start Icon -->
+    <span *ngIf="iconStart"
+          class="textfield__icon-start material-symbols-outlined"
+          (click)="clickIcon('start')">{{ iconStart }}</span>
+
+    <!-- Input -->
+    <input
+      type="text"
+      [formControl]="control"
+      [placeholder]="placeholder"
+      (input)="onInput()"
+      (focus)="onFocus()"
+      (blur)="onBlur()"
+      class="textfield__input"
+      [ngClass]="inputClasses"
+    />
+
+    <!-- Clear button -->
+    <span *ngIf="hasText()"
+          class="textfield__clear material-symbols-outlined"
+          [ngClass]="clearButtonClasses"
+          (click)="clearInput()">clear</span>
+
+    <!-- End Icon -->
+    <span *ngIf="iconEnd"
+          class="textfield__icon-end material-symbols-outlined"
+          (click)="clickIcon('end')">{{ iconEnd }}</span>
+  </div>
+
+  <!-- Error Message -->
+  <p *ngIf="state === 'error'" class="textfield__error">{{ errorText }}</p>
+</div>
+

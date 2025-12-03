@@ -1,0 +1,118 @@
+.textfield {
+  margin-bottom: 4px;
+  font-family: Arial, sans-serif;
+
+  /* Label */
+  &__label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+    color: #767c89;
+  }
+
+  /* Helper text */
+  &__helper {
+    font-size: 12px;
+    margin-top: 4px;
+    color: #767c89;
+  }
+
+  /* Error text */
+  &__error {
+    font-size: 12px;
+    margin-top: 4px;
+    color: #ec6a6a;
+  }
+
+   &__input-wrapper { position: relative; }
+
+
+  /* Input */
+  &__input {
+    width: 100%;
+    box-sizing: border-box; // เพิ่มตรงนี้
+    padding: 0.5rem 40px 0.5rem 8px; // ให้ขวากว้างพอสำหรับ clear button
+    border: 1px solid #d5d6d6;
+    border-radius: 6px;
+    font-size: 12px;
+    height: 40px;
+    transition: 0.2s;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 1px #2563eb;
+    }
+
+    &::placeholder {
+      color: #a0aec0;
+      font-size: 12px;
+      opacity: 1;
+    }
+  }
+
+  &.color-primary .textfield__input {
+    border-color: #c5c5c5;
+  }
+
+  &.color-secondary .textfield__input {
+    border-color: #9c27b0;
+  }
+
+  &.color-success .textfield__input {
+    border-color: #4caf50;
+  }
+
+  &.color-error .textfield__input {
+    border-color: #ec6a6a;
+  }
+  &.color-focus .textfield__input {
+    border-color: #0846e3;
+  }
+
+  /* Clear button */
+  &__clear {
+    position: absolute;
+    top: 50%;
+    right: 8px; // ชิดขอบขวา
+    transform: translateY(-50%);
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    font-family: 'Material Symbols Outlined';
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    font-size: 16px;
+    color: #666666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  /* ------------------------------
+     Sizes
+  -------------------------------*/
+  &--sm {
+    .textfield__input {
+      height: 32px;
+      font-size: 12px;
+    }
+  }
+
+  &--md {
+    .textfield__input {
+      height: 40px;
+      font-size: 14px;
+    }
+  }
+
+  &--lg {
+    .textfield__input {
+      height: 42px;
+      font-size: 16px;
+    }
+  }
+}

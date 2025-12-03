@@ -1,0 +1,175 @@
+.textfield {
+  margin-bottom: 4px;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+
+  /* Label + helper */
+  &__label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+    color: #767c89;
+  }
+
+  &__helper {
+    font-size: 12px;
+    margin-top: 4px;
+    color: #767c89;
+  }
+
+  &__error {
+    font-size: 12px;
+    margin-top: 4px;
+    color: #ec6a6a;
+  }
+ 
+  /* Wrapper */
+  &__input-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Input */
+  &__input {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 8px;
+    border: 1px solid #d5d6d6;
+    border-radius: 6px;
+    font-size: 12px;
+    height: 40px;
+    transition: 0.2s;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 1px #2563eb;
+    }
+
+    &::placeholder {
+      color: #a0aec0;
+      font-size: 12px;
+      opacity: 1;
+    }
+
+    /* Icons padding */
+    &.has-icon-start {
+      padding-left: 28px;
+    }
+
+    &.has-icon-end {
+      padding-right: 28px;
+    }
+
+    &.has-clear-button.has-icon-end {
+      padding-right: 48px;
+    }
+
+    &.has-clear-button:not(.has-icon-end) {
+      padding-right: 32px;
+    }
+  }
+
+  /* Color variants applied on wrapper */
+ &.color-default .textfield__input {
+    border-color: #c5c5c5;
+  }
+
+  &.color-primary .textfield__input {
+    border-color: #024f92;
+  }
+
+  &.color-secondary .textfield__input {
+    border-color: #9c27b0;
+  }
+
+  &.color-success .textfield__input {
+    border-color: #4caf50;
+  }
+
+  &.color-error .textfield__input {
+    border-color: #ec6a6a;
+  }
+   &.color-focus .textfield__input {
+    border-color: #024f92;
+  }
+ &.color-fill .textfield__input {
+  background-color: #e0dfdf9f;
+  border-color: transparent;
+}
+  /* Icon Basic */
+  &__icon-start,
+  &__icon-end {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-family: 'Material Symbols Outlined';
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    font-size: 16px;
+    color: #666666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    pointer-events: auto;
+  }
+
+  &__icon-start {
+    left: 8px;
+  }
+
+  &__icon-end {
+    right: 8px;
+  }
+
+  /* Clear Button */
+  &__clear {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-family: 'Material Symbols Outlined';
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    font-size: 16px;
+    color: #666666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &.with-end-icon {
+      right: 28px;
+    }
+
+    &.without-end-icon {
+      right: 8px;
+    }
+  }
+
+  /* Sizes */
+  &--sm .textfield__input {
+    height: 32px;
+    font-size: 12px;
+  }
+
+  &--md .textfield__input {
+    height: 40px;
+    font-size: 14px;
+  }
+
+  &--lg .textfield__input {
+    height: 42px;
+    font-size: 16px;
+  }
+}
+
